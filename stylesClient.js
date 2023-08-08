@@ -1,6 +1,6 @@
-const style = document.createElement('style')
+const style = document.createElement('style');
 style.textContent = `
-.chaotic-orbit {
+ .chaotic-orbit {
  --uib-size: 25px;
  --uib-speed: 1.5s;
  --uib-color: black;
@@ -20,7 +20,7 @@ style.textContent = `
  height: 60%;
  width: 60%;
  border-radius: 50%;
- background-color: white;
+ background-color: var(--uib-color);
  will-change: transform;
  flex-shrink: 0;
 }
@@ -150,5 +150,6 @@ style.textContent = `
   opacity: 0.65;
  }
 }
-`
-document.body.appendChild(style)
+`;
+
+document.head.appendChild(style);
