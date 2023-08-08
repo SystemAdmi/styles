@@ -1,3 +1,5 @@
+const style = document.createElement('style')
+style.textContent = `
 .chaotic-orbit {
  --uib-size: 25px;
  --uib-speed: 1.5s;
@@ -148,4 +150,5 @@
   opacity: 0.65;
  }
 }
-
+`
+document.body.appendChild(style)
