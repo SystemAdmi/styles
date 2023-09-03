@@ -4,6 +4,9 @@ h1 {
     color: white;
     margin-left: 50px;
 }
+p {
+    color: white;
+}
 .bottomContent {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
