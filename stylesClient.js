@@ -20,7 +20,7 @@ p {
     transform: translate(-50%, -50%);
 }
 
-.play_button {
+.start_button {
     display: inline-block;
     border-radius: 10px;
     border: none;
@@ -42,14 +42,14 @@ p {
     height: 100px;
 }
    
-.play_button span {
+.start_button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.4s;
 }
 
-.play_button:hover {
+.start_button:hover {
     box-shadow: 0px 30px 56px -5px #1875FF;
     width: 410px;
     height: 110px;
