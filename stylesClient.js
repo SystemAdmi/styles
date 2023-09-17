@@ -1,153 +1,71 @@
 const style = document.createElement('style')
 style.textContent = `
-h1 {
-    color: white;
-    margin-left: 50px;
-}
-p {
-    color: white;
-}
-.bottomContent {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
+.notification {
+    font-family: TikTokFont, PingFangSC, sans-serif;
+    font-weight: 600;
+    position: fixed;
+    top: 16px;
+    left: 0px;
+    color: rgb(255, 255, 255);
+    z-index: 2003;
     width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
 }
 
-.start_button {
-    display: inline-block;
-    border-radius: 10px;
-    border: none;
-    background: #1875FF;
-    color: white;
-    font-family: inherit;
+.notification-notice {
+    padding: 8px 0px;
     text-align: center;
-    font-size: 30px;
-    box-shadow: 0px 20px 56px -11px #1875FF;
-    width: 10em;
-    padding: 1em;
-    transition: all 0.4s;
-    cursor: pointer;
-    position: fixed;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 100px;
 }
-   
-.start_button span {
-    cursor: pointer;
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-250%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideOutUp {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-250%);
+    }
+}
+
+.notification-notice-content {
+    background-color: rgba(84, 84, 84, 0.92);
     display: inline-block;
-    position: relative;
-    transition: 0.4s;
+    padding: 10px 8px;
+    pointer-events: all;
+    max-width: 100%;
+    border-radius: 4px;
+    animation: slideInDown 0.6s ease, slideOutUp 0.4s ease 2s;
 }
 
-.start_button:hover {
-    box-shadow: 0px 30px 56px -5px #1875FF;
-    width: 410px;
-    height: 110px;
-}
-.buttonPlay {
- display: flex;
- align-items: center;
- justify-content: center;
- height: 50px;
- position: relative;
- padding: 0 20px;
- font-size: 18px;
- text-transform: uppercase;
- border: 0;
- box-shadow: hsl(210deg 87% 36%) 0px 7px 0px 0px;
- background-color: hsl(210deg 100% 44%);
- border-radius: 12px;
- overflow: hidden;
- transition: 31ms cubic-bezier(.5, .7, .4, 1);
+.main {
+    width: 50vw;
+    direction: ltr;
 }
 
-.buttonPlay:before {
- content: attr(alt);
- display: flex;
- align-items: center;
- justify-content: center;
- position: absolute;
- inset: 0;
- font-size: 15px;
- font-weight: bold;
- color: white;
- letter-spacing: 4px;
- opacity: 1;
+body a, body abbr, body acronym, body address, body applet, body article, body aside, body audio, body b, body big, body blockquote, body body, body canvas, body caption, body center, body cite, body code, body dd, body del, body details, body dfn, body div, body dl, body dt, body em, body embed, body fieldset, body figcaption, body figure, body footer, body form, body h1, body h2, body h3, body h4, body h5, body h6, body header, body hgroup, body html, body i, body iframe, body img, body ins, body kbd, body label, body legend, body li, body mark, body menu, body nav, body object, body ol, body output, body p, body pre, body q, body ruby, body s, body samp, body section, body small, body span, body strike, body strong, body sub, body summary, body sup, body table, body tbody, body td, body tfoot, body th, body thead, body time, body tr, body tt, body u, body ul, body var, body video {
+    font-family: TikTokFont,Arial,Tahoma,PingFangSC,sans-serif;
 }
 
-.buttonPlay:active {
- box-shadow: none;
- transform: translateY(7px);
- transition: 35ms cubic-bezier(.5, .7, .4, 1);
+* {
+	margin: 0;
+	padding: 0;
 }
 
-.buttonPlay:hover:before {
- transition: all .0s;
- transform: translateY(100%);
- opacity: 0;
+html {
+	overflow: hidden;
 }
 
-.buttonPlay i {
- color: white;
- font-size: 15px;
- font-weight: bold;
- letter-spacing: 4px;
- font-style: normal;
- transition: all 2s ease;
- transform: translateY(-20px);
- opacity: 0;
-}
-
-.buttonPlay:hover i {
- transition: all .2s ease;
- transform: translateY(0px);
- opacity: 1;
-}
-
-.buttonPlay:hover i:nth-child(1) {
- transition-delay: 0.045s;
-}
-
-.buttonPlay:hover i:nth-child(2) {
- transition-delay: calc(0.045s * 3);
-}
-
-.buttonPlay:hover i:nth-child(3) {
- transition-delay: calc(0.045s * 4);
-}
-
-.buttonPlay:hover i:nth-child(4) {
- transition-delay: calc(0.045s * 5);
-}
-
-.buttonPlay:hover i:nth-child(6) {
- transition-delay: calc(0.045s * 6);
-}
-
-.buttonPlay:hover i:nth-child(7) {
- transition-delay: calc(0.045s * 7);
-}
-
-.buttonPlay:hover i:nth-child(8) {
- transition-delay: calc(0.045s * 8);
-}
-
-.buttonPlay:hover i:nth-child(9) {
- transition-delay: calc(0.045s * 9);
-}
-
-.buttonPlay:hover i:nth-child(10) {
- transition-delay: calc(0.045s * 10);
+body {
+	height: 100%;
 }
 `
 document.head.appendChild(style)
